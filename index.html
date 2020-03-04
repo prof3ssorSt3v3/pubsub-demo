@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pub Sub Demo</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <main>
+        <!-- list module interfaces will be loaded here -->
+      </main>
+      <aside>
+        <!-- stats interface and forms will be loaded here -->
+      </aside>
+
+      <footer>
+        <ol></ol>
+      </footer>
+    </div>
+
+    <script src="main.js" type="module"></script>
+
+    <template id="actorListTemplate">
+      <div class="actor-container"><ul></ul></div>
+    </template>
+
+    <template id="movieListTemplate">
+      <div class="movie-container"><ul></ul></div>
+    </template>
+
+    <template id="actorFormTemplate">
+      <form class="actor-form">
+        <input type="text" placeholder="Actor Name" />
+        <button>Add Actor</button>
+      </form>
+    </template>
+
+    <template id="movieFormTemplate">
+      <form class="movie-form">
+        <input type="text" placeholder="Movie Title" />
+        <button>Add Movie</button>
+      </form>
+    </template>
+  </body>
+</html>
