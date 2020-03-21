@@ -5,24 +5,22 @@ export const stats = {
     let d = document.createElement('div');
     d.className = 'stats-container';
     container.appendChild(d);
+    let pm = document.createElement('p');
+    pm.className = 'movie-count';
+    pm.innerHTML = `0 movies in list`;
+    d.appendChild(pm);
+    let pa = document.createElement('p');
+    pa.className = 'actor-count';
+    pa.innerHTML = `0 actors in list`;
+    d.appendChild(pa);
 
     //build stats for movies
     pubsub.subscribe('moviesUpdated', stats.moviesUpdated);
     console.log('STATS: listening for moviesUpdated events');
 
-    let pm = document.createElement('p');
-    pm.className = 'movie-count';
-    pm.innerHTML = `0 movies in list`;
-    d.appendChild(pm);
-
     //build stats for actors
     pubsub.subscribe('actorsUpdated', stats.actorsUpdated);
     console.log('STATS: listening for actorsUpdated events');
-
-    let pa = document.createElement('p');
-    pa.className = 'actor-count';
-    pa.innerHTML = `0 actors in list`;
-    d.appendChild(pa);
   },
   moviesUpdated: list => {
     //the list of movies was just published as updated

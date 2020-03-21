@@ -4,11 +4,12 @@
  **/
 
 import { movies } from './movies.js';
-import { movieForm } from './movie-form.js';
 import { actors } from './actors.js';
+
+import { movieForm } from './movie-form.js';
 import { actorForm } from './actor-form.js';
+
 import { stats } from './stats.js';
-import { footer } from './footer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   let main = document.querySelector('main');
@@ -27,7 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //add a form to add actors
   actorForm.render(aside);
-
-  //add the footer
-  footer.render(document.querySelector('footer'));
 });

@@ -45,6 +45,7 @@ aside {
   display: block;
   content: 'Actors';
   transform: rotate(-5deg) translate(-1rem, -2rem);
+  text-shadow: 2px 2px 4px #999;
   font-weight: 500;
   font-size: 2rem;
 }
@@ -64,6 +65,7 @@ aside {
   display: block;
   content: 'Movies';
   transform: rotate(-5deg) translate(-1rem, -2rem);
+  text-shadow: 2px 2px 4px #999;
   font-weight: 500;
   font-size: 2rem;
 }
