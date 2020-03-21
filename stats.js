@@ -21,6 +21,10 @@ export const stats = {
     //build stats for actors
     pubsub.subscribe('actorsUpdated', stats.actorsUpdated);
     console.log('STATS: listening for actorsUpdated events');
+
+    pubsub.subscribe('actorDeleted', stats.actorsUpdated);
+
+    pubsub.subscribe('movieDeleted', stats.moviesUpdated);
   },
   moviesUpdated: list => {
     //the list of movies was just published as updated

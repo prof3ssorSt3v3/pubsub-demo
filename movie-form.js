@@ -15,7 +15,7 @@ export const movieForm = {
     input.value = ''; //clear the form
 
     //tell anyone who is listening that a movie was added
-    console.log(`MOVIE FORM: just added ${title}`);
+    console.log(`MOVIE FORM: just movieAdded "${title}"`);
     pubsub.publish('movieAdded', title);
   }
 };

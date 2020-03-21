@@ -6,10 +6,19 @@ export const movies = {
     let template = document.getElementById('movieListTemplate');
     let div = template.content.cloneNode(true);
     container.appendChild(div);
+    let ul = document.querySelector('.movie-container ul');
+    ul.addEventListener('click', movies.deleted);
 
     //listen for movieAdded messages
     console.log('MOVIES: want to know if a movie is added');
     pubsub.subscribe('movieAdded', movies.movieAdded);
+  },
+  deleted: ev => {
+    let item = ev.target.closest('li');
+    let name = item.textContent;
+    movies.list = movies.list.filter(nm => nm !== name);
+    pubsub.publish('movieDeleted', movies.list);
+    item.parentElement.removeChild(item);
   },
   movieAdded: title => {
     //use Set to prevent duplicates
@@ -19,7 +28,7 @@ export const movies = {
     movies.list = Array.from(list).sort();
 
     //tell anyone who is listening that the movie list was updated
-    console.log(`MOVIES: just updated the list`);
+    console.log(`MOVIES: just moviesUpdated the list`);
     pubsub.publish('moviesUpdated', movies.list);
 
     //then update the ui with the new list
